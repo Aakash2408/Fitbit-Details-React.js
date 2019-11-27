@@ -4,6 +4,8 @@ import classes from './App.module.css';
 import ProductData from './ProductData';
 
 function App() {
+  const currentHour = new Date().getHours()>9? new Date().getHours():'0'+ new Date().getHours();
+  const CurrentMinute= new Date().getMinutes()>9? new Date().getMinutes():'0'+new Date().getMinutes();
   return (
     <div className="App">
       <header className="App-header">
@@ -14,7 +16,11 @@ function App() {
       </header>
       <div className={classes.Maincontainer}>
        <div className={classes.ProductPreview} >
-         <img src="https://imgur.com/iOeUBV7.png" ></img>
+         <img src="https://imgur.com/iOeUBV7.png" alt="Product Preview" ></img>
+
+         <div  className={classes.FeatureData}> 
+           <p>{'${}:${new Date().getMinutes()}'}</p>
+         </div>
        </div>
 
        <div className={classes.ProductData}>
