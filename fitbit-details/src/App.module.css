@@ -79,4 +79,27 @@ body{
   border-radius: 8px;
   border: 0;
   padding: 12px 24px;
+  text-align: center;
+  margin-right: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  box-sizing: content-box;
+  
+}
+.SelectedFeatureItem{
+  color: white;
+  background-color: gray;
+}
+
+.PrimaryButton{
+  color: white;
+  background-color: teal;
+  font-size: 20px;
+  border-radius:8px;
+  border: 0;
+  padding: 12px 24px;
+
+  margin-top:36px;
+
+  
 }
