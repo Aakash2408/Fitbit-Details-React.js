@@ -4,23 +4,33 @@ import classes from './App.module.css';
 import ProductData from './ProductData';
 
 function App() {
-  const currentHour = new Date().getHours()>9? new Date().getHours():'0'+ new Date().getHours();
-  const CurrentMinute= new Date().getMinutes()>9? new Date().getMinutes():'0'+new Date().getMinutes();
+  
+  let date = new Date();
+  let currentDate = `${date.getHours()}:${date.getMinutes()}`;
   return (
     <div className="App">
       <header className="App-header">
         <nav>
           <nav className={classes.Topbar}>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8fnHPM-sqSQEghXsgItHj5Jqohis9bPwuXJDCkoieaU4nSOu7"></img></nav>
+          <img src="http://localhost:3000/static/media/logo.f18c01ee.png"></img></nav>
           </nav>
       </header>
       <div className={classes.Maincontainer}>
        <div className={classes.ProductPreview} >
          <img src="https://imgur.com/iOeUBV7.png" alt="Product Preview" ></img>
 
-         <div  className={classes.FeatureData}> 
-           <p>{'${}:${new Date().getMinutes()}'}</p>
+         {/* <div  className={classes.TimeSection}> 
+         <p className={classes.time}>{currentDate}</p>
+         </div> */}
+
+         <div  className={classes.HeartBeatSection}> 
+         <i class="fas fa-heartbeat"></i>
+         <p>78</p>
          </div>
+
+
+
+         
        </div>
 
        <div className={classes.ProductData}>
@@ -47,8 +57,8 @@ function App() {
            <h3 className={classes.SectionHeading}>Features</h3>
 
            <div>
-             <button className={[classes.FeatureTime,classes.SelectedFeatureItem].join(' ')}>Time</button>
-             <button className={classes.FeatureTime}>Heart Rate</button>
+             <button className={[classes.FeatureItem,classes.SelectedFeatureItem].join(' ')}>Time</button>
+             <button className={classes.FeatureItem}>Heart Rate</button>
            </div> 
 
            <button className={classes.PrimaryButton}>Buy Now</button>
