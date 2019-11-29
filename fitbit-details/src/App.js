@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
+
 import classes from './App.module.css';
 
 import ProductPreview from './ProductPreview/ProductPreview';
 import ProductDetails from './ProductDetails/ProductDetails';
 import Topbar from './Topbar/Topbar';
-import ProductData from './ProductData';
+import ProductData from './Utils/ProductData';
 
 class App extends Component{
   
   state={
-    ProductData: ProductData,
+    productData: ProductData,
     currentPreviewImage:'https://imgur.com/xSIK4M8.png',
     showHeartBeatSection:false,
   }
+  onColorOptionClick = () => {
+  const updatedPreviewImage =this.state.productData.colorOptions[pos].imageUrl
+   console.log(updatedPreviewImage);
+  this.setState({currentPreviewImage :updatedPreviewImage})
+} 
 
  render(){
   return (
@@ -30,7 +35,7 @@ class App extends Component{
            showHeartBeatSection={this.state.showHeartBeatSection}/> 
        </div>
       <div className={classes.ProductData}>
-         <ProductDetails data={this.state.ProductData} />
+         <ProductDetails data={this.state.ProductData}  onColorOptionClick={this.onColorOptionClick}/>
        </div>
       </div> 
     </div>

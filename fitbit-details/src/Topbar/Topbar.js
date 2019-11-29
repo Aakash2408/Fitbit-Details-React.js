@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from  './logo.png';
+
 import classes from './Topbar.module.css';
 const Topbar= (  ) => {
 
@@ -8,7 +8,7 @@ const Topbar= (  ) => {
         <nav>
             
           <nav className={classes.Topbar}>
-          <img src={logo} alt="Amazon Logo"></img></nav>
+          <img src="https://i.pinimg.com/originals/8a/02/02/8a0202e54a5dec12ead7937a8b422469.png" alt="Amazon Logo"></img></nav>
           </nav> 
           </header>
     )

@@ -9,7 +9,7 @@ const ProductDetails =(props) =>{
       classArr.push(classes.SelectedProductImage);
     }
     return(
-      <img key={pos} className={classArr.join(' ')} src={item.imageUrl} alt={item.styleName}></img>
+      <img key={pos} className={classArr.join(' ')} src={item.imageUrl} alt={item.styleName} onClick={props.onColorOptionClick(pos)}></img>
     );
   })
   
