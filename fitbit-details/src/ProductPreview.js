@@ -9,14 +9,14 @@ return(
     <div className={classes.ProductPreview}>
     <img src="https://imgur.com/iOeUBV7.png" alt="Product Preview" ></img>
 
-<div  className={classes.TimeSection}> 
+{/* <div  className={classes.TimeSection}> 
 <p className={classes.time}>{currentDate}</p>
-</div>
+</div> */}
 
-{/* <div  className={classes.HeartBeatSection}> 
+<div  className={classes.HeartBeatSection}> 
 <i class="fas fa-heartbeat"></i>
 <p>78</p>
-</div> */}
+</div>
     </div>
    );
 

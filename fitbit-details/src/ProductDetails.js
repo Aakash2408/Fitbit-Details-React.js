@@ -3,8 +3,9 @@ import classes from'./ProductDetails.module.css';
 import ProductData from './ProductData';
 
 const ProductDetails =(props) =>{
+  console.log(props.data);
     return(
-
+<div>
 
          <h1 className={classes.ProductTitle}>
            {ProductData.title}
@@ -15,7 +16,7 @@ const ProductDetails =(props) =>{
 
 
          <h3 className={classes.SectionHeading}>Select Color</h3> 
-         
+                 
          
          <div>
            <img className={[classes.ProductImage,classes.SelectedProductImage].join(' ')} src="https://imgur.com/iOeUBV7.png"  alt="Black colored Watch"></img>
@@ -34,6 +35,7 @@ const ProductDetails =(props) =>{
            </div> 
 
            <button className={classes.PrimaryButton}>Buy Now</button>
+           </div> 
     )
 
 }

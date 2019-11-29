@@ -3,19 +3,6 @@ body{
 }
 
 
-.Topbar{
-  background-color: #282c34;
-  padding: 24px 48px 12px;
-  text-align: center;
-  position: fixed;
-  top:0;
-  left: 0;
-  width: 100%;
-  
-}
-.Topbar> img{
-  width: 100px;
-}
 
 .Maincontainer{
   padding:4% 12%;

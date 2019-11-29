@@ -4,7 +4,7 @@ import classes from './Topbar.module.css';
 const Topbar= (  ) => {
 
     return (
-         <header className="App-header">
+         <header >
         <nav>
             
           <nav className={classes.Topbar}>
