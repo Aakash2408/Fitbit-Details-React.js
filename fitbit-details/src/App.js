@@ -1,10 +1,11 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import logo from './logo.png';
 import classes from './App.module.css';
 
 import ProductPreview from './ProductPreview';
 import ProductDetails from './ProductDetails';
 import Topbar from './Topbar';
+import ProductData from './ProductData';
 
 class App extends Component{
   
@@ -15,21 +16,17 @@ class App extends Component{
  render(){
   return (
     <div className="App">
-      
-       <Topbar />
+      <Topbar />
+
     
 
 
 
       <div className={classes.Maincontainer}>
-       
-       
-       
-       <div className={classes.ProductPreview} >
-              <ProductPreview /> 
+      <div className={classes.ProductPreview} >
+           <ProductPreview /> 
        </div>
-
-       <div className={classes.ProductData}>
+      <div className={classes.ProductData}>
          <ProductDetails data={this.state.ProductData} />
        </div>
       </div> 

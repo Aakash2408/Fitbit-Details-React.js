@@ -5,7 +5,7 @@ import ProductData from './ProductData';
 const ProductDetails =(props) =>{
   console.log(props.data);
     return(
-<div>
+<div className={classes.ProductData}>
 
          <h1 className={classes.ProductTitle}>
            {ProductData.title}
