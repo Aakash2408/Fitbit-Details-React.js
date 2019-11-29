@@ -1,9 +1,12 @@
 import React from'react';
 import classes from'./ProductDetails.module.css';
+import ProductData from './ProductData';
 
 const ProductDetails =(props) =>{
     return(
-    <h1 className={classes.ProductTitle}>
+
+
+         <h1 className={classes.ProductTitle}>
            {ProductData.title}
          </h1>
          <p className={classes.ProductDecription}>

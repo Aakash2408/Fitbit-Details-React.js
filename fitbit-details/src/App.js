@@ -1,5 +1,5 @@
 import React from 'react';
-
+import logo from './logo.png';
 import classes from './App.module.css';
 
 import ProductPreview from './ProductPreview';
@@ -8,17 +8,21 @@ import Topbar from './Topbar';
 
 function App() {
   
-  
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <Topbar />
-    </header>
-      <div className={classes.Maincontainer}>
-       <div className={classes.ProductPreview} >
-      <ProductPreview />
+      
+       <Topbar />
+    
 
-         
+
+
+      <div className={classes.Maincontainer}>
+       
+       
+       
+       <div className={classes.ProductPreview} >
+              <ProductPreview /> 
        </div>
 
        <div className={classes.ProductData}>
