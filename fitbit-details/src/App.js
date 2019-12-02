@@ -10,13 +10,13 @@ import ProductData from './Utils/ProductData';
 class App extends Component{
   
   state={
-    ProductData,
+    productData:ProductData,
     currentPreviewImage:'https://imgur.com/xSIK4M8.png',
     showHeartBeatSection:false,
   };
    onColorOptionClick = (pos) => {
      console.log(this.state);
-  const updatedPreviewImage =this.state.ProductData.colorOptions[pos].imageUrl
+  const updatedPreviewImage =this.state.productData.colorOptions[pos].imageUrl
    console.log(updatedPreviewImage);
   this.setState({currentPreviewImage :updatedPreviewImage});
   // let showState= ()=>{
@@ -33,14 +33,14 @@ class App extends Component{
     
 
 
-    <p>{JSON.stringify(this.state.ProductData)}</p>
+    {/* <p>{JSON.stringify(this.state.ProductData)}</p> */}
       <div className={classes.Maincontainer}>
       <div className={classes.ProductPreview} >
            <ProductPreview  currentPreviewImage={this.state.currentPreviewImage}
            showHeartBeatSection={this.state.showHeartBeatSection}/> 
        </div>
       <div className={classes.ProductData}>
-         <ProductDetails data={this.state.ProductData} 
+         <ProductDetails data={this.state.productData} 
           onColorOptionClick={this.onColorOptionClick}/>
        </div>
       </div> 

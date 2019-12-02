@@ -14,9 +14,9 @@ return(
 
         props.showHeartBeatSection ?
         <div  className={classes.HeartBeatSection}> 
-<i class="fas fa-heartbeat"></i>
-<p>78</p>
-</div>
+        <i class="fas fa-heartbeat"></i>
+        <p>78</p>
+       </div>
 :
 
 <div  className={classes.TimeSection}> 
