@@ -1,62 +1,69 @@
-import React from'react';
-import classes from'./ProductDetails.module.css';
+import React from "react";
+import classes from "./App.module.css";
 
+const ProductDetails = props => {
+  let date = new Date();
+  let currentDate = `${date.getHours()}:${date.getMinutes()}`;
+  return (
+    <div className={classes.ProductContainer}>
+      <div className={classes.LeftSection}>
+        <img className={classes.PreviewImage} src={props.preImage} alt="" />
+        <div className={classes.FeaturesWrapper}>
+          {props.featureBtn === "Time" ? (
+            <p className={classes.time}>{currentDate}</p>
+          ) : (
+            <div className={classes.HeartRate}>
+              <img src="https://i.imgur.com/dtevMBk.png" alt="" />
+              <p>75</p>
+            </div>
+          )}
+        </div>
+      </div>
 
-const ProductDetails =(props) =>{
-  const colorOptions = props.data.colorOptions.map((item,pos) => {
-  const classArr=[classes.ProductImage]
-    if(pos  === 0){
-      classArr.push(classes.SelectedProductImage);
-    }
+      <div className={classes.ProductDetails}>
+        <p className={classes.Title}>{props.title}</p>
+        <p>{props.description}</p>
 
+        <div className={classes.SelectColor}>
+          <h3 className={classes.Heading}>Select Color</h3>
+          {props.colorOptions.map((item, pos) => {
+            return (
+              <img
+                key={pos}
+                className={[
+                  classes.Image,
+                  pos === props.currentImage ? classes.Active : null
+                ].join(" ")}
+                src={item.imageUrl}
+                alt=""
+                onClick={() => props.imgOnClick(pos)}
+              />
+            );
+          })}
+        </div>
 
-    return(
-      <img key={pos} className={classArr.join(' ')} src={item.imageUrl} alt={item.styleName} 
-      onClick={()=>props.onColorOptionClick(pos)}></img>
-    );
-  })
-  
-  const featureList = props.data.featureList.map((item,pos) => {
-    const classArr=[classes.FeatureItem];
-    if(pos=== props.currentPreviewImagepos){
-      classArr.push(classes.SelectedFeatureItem);
-    }
+        <div className={classes.Features}>
+          <h3 className={classes.Heading}>Features</h3>
+          {props.featureList.map((item, pos) => {
+            return (
+              <button
+                key={pos}
+                className={[
+                  classes.FeatureBtn,
+                  pos === props.currentBtn ? classes.ActiveBtn : null
+                ].join(" ")}
+                onClick={() => props.btnOnClick(item, pos)}
+              >
+                {item}
+              </button>
+            );
+          })}
+        </div>
 
+        <button className={classes.BuyNow}>Buy Now</button>
+      </div>
+    </div>
+  );
+};
 
-    return(
-      <button key={pos} className={classArr.join(' ')}>{item}</button>
-    )
-  })
-
-    return(
-<div className={classes.ProductData}>
-
-         <h1 className={classes.ProductTitle}>
-           {props.data.title}
-         </h1>
-         <p className={classes.ProductDecription}>
-           {props.data.description}
-         </p>
-
-
-         <h3 className={classes.SectionHeading}>Select Color</h3> 
-                 
-         
-         <div>
-           {colorOptions}
-          
-           </div>
-              
-
-           <h3 className={classes.SectionHeading}>Features</h3>
-
-           <div>
-            {featureList}
-           </div> 
-
-           <button className={classes.PrimaryButton}>Buy Now</button>
-           </div> 
-    )
-
-}
-export default ProductDetails;  
+export default ProductDetails;
