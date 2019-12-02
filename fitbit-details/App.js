@@ -1,4 +1,4 @@
-iimport React, { Component } from "react";
+import React, { Component } from "react";
 import classes from "./App.module.css";
 import ProductData from "./ProductData";
 import Header from "./Header";

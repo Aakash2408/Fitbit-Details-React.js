@@ -1,6 +1,6 @@
 const ProductData = {
     title: 'FitBit 19 - The Smartest Watch',
-    description: 'Fitbit,  is an American company headquartered in San Francisco, California.  ',
+    description: 'Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.',
     colorOptions: [
         {
             styleName: 'Black Strap',
