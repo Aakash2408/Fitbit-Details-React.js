@@ -1,55 +1,50 @@
-import React, { Component } from 'react';
+iimport React, { Component } from "react";
+import classes from "./App.module.css";
+import ProductData from "./ProductData";
+import Header from "./Header";
+import ProductDetails from "./ProductDetails";
 
-import classes from './App.module.css';
+class App extends Component {
+  state = {
+    currentImagePos: 0,
+    imageUrl: ProductData.colorOptions[0].imageUrl,
+    featureBtnPos: 0,
+    featureBtn: ProductData.featureList[0]
+  };
 
-import ProductPreview from './ProductPreview/ProductPreview';
-import ProductDetails from './ProductDetails/ProductDetails';
-import Topbar from './Topbar/Topbar';
-import ProductData from './Utils/ProductData';
+  onImageClick = pos => {
+    this.setState({
+      imageUrl: ProductData.colorOptions[pos].imageUrl,
+      currentImagePos: pos
+    });
+  };
 
-class App extends Component{
-  
-  state={
-    productData:ProductData,
-    
-    currentPreviewImagePos:0,
-    showHeartBeatSection:false,
+  onFeatureBtnClick = (item, pos) => {
+    this.setState({
+      featureBtn: item,
+      featureBtnPos: pos
+    });
+  };
+
+  render() {
+    return (
+      <div className={classes.App}>
+        <Header />
+        <ProductDetails
+          preImage={this.state.imageUrl}
+          title={ProductData.title}
+          description={ProductData.description}
+          colorOptions={ProductData.colorOptions}
+          imgOnClick={this.onImageClick}
+          currentImage={this.state.currentImagePos}
+          featureList={ProductData.featureList}
+          btnOnClick={this.onFeatureBtnClick}
+          featureBtn={this.state.featureBtn}
+          currentBtn={this.state.featureBtnPos}
+        />
+      </div>
+    );
   }
-   onColorOptionClick = (pos) => {
-    //  console.log(this.state);
-  // const updatedPreviewImage =this.state.productData.colorOptions[pos].imageUrl
-  //  console.log(updatedPreviewImage);
-  this.setState({currentPreviewImagePos : pos});
-  // let showState= ()=>{
-  //   console.log(this.state,"====================");
-  //   console.log(state,"++++++++++++++++++++");
-  // }
-} 
-
- render(){
-  return (
-    <div className="App">
-      <Topbar />
-
-    
-
-
-    {/* <p>{JSON.stringify(this.state.ProductData)}</p> */}
-      <div className={classes.Maincontainer}>
-      <div className={classes.ProductPreview} >
-           <ProductPreview  currentPreviewImage={this.state.productData.colorOptions[this.state.currentPreviewImagePos].imageUrl}
-           showHeartBeatSection={this.state.showHeartBeatSection}
-           currentPreviewImagePos={this.state.currentPreviewImagePos}/> 
-       </div>
-      <div className={classes.ProductData}>
-         <ProductDetails data={this.state.productData} 
-          onColorOptionClick={this.onColorOptionClick}/>
-       </div>
-      </div> 
-    </div>
-  );
- }
-  
 }
 
 export default App;
