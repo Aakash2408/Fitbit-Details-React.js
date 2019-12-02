@@ -1,23 +1,220 @@
-body{
-  font-family:'Source Sans Pro', sans-serif; ;
+.App {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
+/* Header Style */
+.Header {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(36, 47, 61);
+  justify-content: center;
+  position: relative;
+}
 
+/* Logo Style */
+.LogoImage {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-.Maincontainer{
-  padding:4% 12%;
-  box-sizing: border-box;
-  margin-top:32px;
+/* Product Container Style */
+.ProductContainer {
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  overflow-x: hidden;
 }
 
-.ProductPreview{
-  width: 50%;
-  position:relative;
+/* Left Section Style */
+.LeftSection {
+  width: 550px;
+  height: 100%;
+  position: relative;
 }
 
-.ProductData{
-  width: 50%;
+/* Preview Image Style */
+.PreviewImage {
+  width: 100%;
+  height: 100%;
+}
+
+/* Time */
+.time {
+  display: block;
+  font-size: 34px;
+  font-weight: bold;
+  position: absolute;
+  top: 38%;
+  right: 42%;
+  color: #fff;
+  letter-spacing: 3px;
+}
+
+/* Heart Rate Style */
+.HeartRate {
+  position: absolute;
+  top: 30%;
+  right: 35%;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  color: #fff;
+}
+
+.HeartRate img {
+  width: 100%;
+  height: 100%;
+  animation: blink 2s linear infinite;
+}
+.HeartRate p {
+  margin-top: -15px;
+  font-size: 26px;
+}
+
+/* Heart Beat Animation */
+@keyframes blink {
+  0% {
+    transform: scale(0.75);
+  }
+
+  20% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(0.75);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  80% {
+    transform: scale(0.75);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Product Details Wrapper */
+.ProductDetails {
+  width: 48%;
+}
+
+/* Product title Style */
+.Title {
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+/* Select Color Style */
+.SelectColor {
+  margin-top: 25px;
+  transition: ease-in-out 0.2s;
+}
+
+/* Select Color > Images Style */
+.Image {
+  margin-left: 5px;
+  width: 12%;
+  height: 10%;
+  cursor: pointer;
+}
+
+/* Active Image Style */
+.Active {
+  border: 3px solid goldenrod;
+  border-radius: 6px;
+}
+
+/* Features Style */
+.Features {
+  margin-top: 25px;
+}
+
+/* Features > Button Style */
+.FeatureBtn {
+  width: 150px;
+  height: 40px;
+  display: inline-block;
+
+  font-size: 18px;
+  letter-spacing: 1px;
+
+  margin-right: 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: ease-in-out 0.2s;
+}
+
+.FeatureBtn:hover {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.ActiveBtn {
+  background-color: rgb(151, 151, 151);
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+/* Buy Now Button Style */
+.BuyNow {
+  width: 150px;
+  height: 40px;
+  display: inline-block;
+
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  margin-top: 30px;
+  margin-right: 20px;
+
+  border: none;
+  outline: none;
+  border-radius: 5px;
+
+  background-color: goldenrod;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.BuyNow:hover {
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .LeftSection {
+    width: 450px;
+  }
+  .time {
+    font-size: 24px;
+    top: 37%;
+    right: 37%;
+  }
+  .Title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .LeftSection {
+    width: 100%;
+  }
+  .ProductDetails {
+    width: 100%;
+    padding: 50px;
+    padding-top: 0;
+  }
 }
