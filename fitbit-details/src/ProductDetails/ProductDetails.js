@@ -18,7 +18,7 @@ const ProductDetails =(props) =>{
   
   const featureList = props.data.featureList.map((item,pos) => {
     const classArr=[classes.FeatureItem];
-    if(pos===0){
+    if(pos=== props.currentPreviewImagepos){
       classArr.push(classes.SelectedFeatureItem);
     }
 
