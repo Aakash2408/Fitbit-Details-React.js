@@ -132,7 +132,7 @@
 
 /* Active Image Style */
 .Active {
-  border: 3px solid goldenrod;
+  border: 3px solid rgb(32, 218, 203);
   border-radius: 6px;
 }
 
