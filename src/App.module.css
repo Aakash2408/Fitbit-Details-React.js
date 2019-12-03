@@ -16,11 +16,11 @@
 
 /* Logo Style */
 .LogoImage {
-  width: 130px;
-  height: 50px;
+  width: 120px;
+  height: 45px;
   position: absolute;
   top: 40px;
-  left: 50%;
+  left: 52%;
   transform: translate(-50%, -50%);
 }
 
